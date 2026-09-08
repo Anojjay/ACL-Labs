@@ -1,0 +1,54 @@
+# Lab 1 - OSPF & ACLs
+
+## Overview
+
+Cisco Packet Tracer lab focused on configuring OSPF for dynamic routing and implementing standard ACLs to control traffic between networks.
+
+## Objectives
+
+- Configure OSPF on R1 and R2.
+- Establish full connectivity between PCs and servers.
+- Configure standard numbered ACLs on R1.
+- Configure standard named ACLs on R2.
+- Apply ACLs to enforce network access policies.
+- Verify routing and ACL functionality.
+
+## Network Topology
+
+- R1: 172.16.1.0/24, 172.16.2.0/24
+- R2: 192.168.1.0/24, 192.168.2.0/24
+- R1–R2: 203.0.113.0/30
+- PC1: 172.16.1.1
+- PC2: 172.16.1.2
+- PC3: 172.16.2.1
+- PC4: 172.16.2.2
+- SRV1: 192.168.1.100
+- SRV2: 192.168.2.100
+
+## OSPF
+
+OSPF was configured between R1 and R2 using Area 0 to provide dynamic routing between all networks.
+
+## ACL Policies
+
+The following access rules were implemented:
+
+- Only PC1 and PC3 can access `192.168.1.0/24`.
+- Hosts in `172.16.2.0/24` cannot access `192.168.2.0/24`.
+- `172.16.1.0/24` cannot access `172.16.2.0/24`.
+- `172.16.2.0/24` cannot access `172.16.1.0/24`.
+
+## Verification
+
+OSPF and ACL configurations were verified using routing tables, OSPF neighbor relationships, and ping tests between devices.
+
+## Key Concepts
+
+- OSPF dynamic routing
+- OSPF Area 0
+- Wildcard masks
+- Standard numbered ACLs
+- Standard named ACLs
+- Inbound and outbound ACLs
+- ACL traffic filtering
+- Network connectivity testing
